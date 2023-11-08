@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Flower Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Iris Flower Detection</h1>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="sepal_length">Sepal Length:</label>
+                <input type="number" step="0.01" class="form-control" id="sepal_length" name="sepal_length" required>
+            </div>
+            <div class="form-group">
+                <label for="sepal_width">Sepal Width:</label>
+                <input type="number" step="0.01" class="form-control" id="sepal_width" name="sepal_width" required>
+            </div>
+            <div class="form-group">
+                <label for="petal_length">Petal Length:</label>
+                <input type="number" step="0.01" class="form-control" id="petal_length" name="petal_length" required>
+            </div>
+            <div class="form-group">
+                <label for="petal_width">Petal Width:</label>
+                <input type="number" step="0.01" class="form-control" id="petal_width" name="petal_width" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if prediction %}
+            <div class="alert alert-success" role="alert">
+                {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
